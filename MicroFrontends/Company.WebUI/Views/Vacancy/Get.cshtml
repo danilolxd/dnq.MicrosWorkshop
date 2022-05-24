@@ -1,0 +1,16 @@
+﻿@model VacancyDetailViewModel
+
+@{
+    ViewData["Title"] = "Vacancy Detail";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p><b>ID:</b> @Model.IdVacancy</p>
+<p><b>Job:</b> @Model.Job</p>
+<p><b>Description:</b> @Model.Description</p>
+<p><b>InsertDate:</b> @Model.InsertDate.ToString("dd-MM-yyyy")</p>
+
+<br />
+
+<p><a asp-controller="Candidate" asp-action="List" asp-route-id="@Model.IdVacancy">View Candidates</a></p>

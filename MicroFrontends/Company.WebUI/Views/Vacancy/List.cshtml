@@ -1,0 +1,29 @@
+﻿@model List<VacancyListItemViewModel>
+
+@{
+    ViewData["Title"] = "Vacancies List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-striped table-bordered table-hover" style="max-width: 500px;">
+    <tr>
+        <th>Job</th>
+        <th>Number Candidates</th>
+        <th></th>
+    </tr>
+    @foreach (var vacancy in Model)
+    {
+        <tr>
+            <td class="text-center">
+                @vacancy.Job
+            </td>
+            <td class="text-right">
+                @vacancy.NumCandidates
+            </td>
+            <td class="text-right">
+                <a asp-controller="Vacancy" asp-action="Get" asp-route-id="@vacancy.IdVacancy">View Detail</a>
+            </td>
+        </tr>
+    }
+</table>
