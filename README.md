@@ -1,3 +1,4 @@
+
 # ¡Bienvenido a MicrosWorkshop!
 
 La idea principal de este workshop, es implementar un nuevo microservicio con estructura DDD y realizar las llamadas hacia este desde un microfrontend en MVC usando Refit. ¡Espero que te diviertas! (Y ver cómo siempre aplicas buenas prácticas 😜).
@@ -27,5 +28,12 @@ En el detalle de la oferta, aparece un link **NO FUNCIONAL** para ir al listado 
 	 - Listar candidatos a partir de un ID de oferta
 	 - Obtener el detalle de un candidato
 	 - Crear un nuevo candidato (al crear un candidato deberemos de publicar un evento para que el microservicio de ofertas sepa que se ha añadido un nuevo candidato)
+
+- El objeto Candidate tiene que tener únicamente las siguientes propiedades:
+	 - IdCandidate (PK)
+	 - IdVacancy (ID de la oferta relacionada)
+	 - Name
+	 - Surname
+	 - Email
 
 2. Tenemos que desarrollar la parte del listado y detalle de candidatos en el microfrontend del área de empresa, linkando el enlace hasta ahora "No funcional" y realizando las llamadas al nuevo microservicio usando Refit.
