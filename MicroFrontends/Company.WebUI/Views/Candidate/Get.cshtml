@@ -1,0 +1,13 @@
+﻿@model CandidateDetailViewModel
+
+@{
+    ViewData["Title"] = "Candidate Detail";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p><b>ID:</b> @Model.IdCandidate</p>
+<p><b>Name:</b> @Model.Name</p>
+<p><b>Surname:</b> @Model.Surname</p>
+<p><b>Email:</b> @Model.Email</p>
+<p><b>InsertDate:</b> @Model.InsertDate.ToString("dd-MM-yyyy")</p>

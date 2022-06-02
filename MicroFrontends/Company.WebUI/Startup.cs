@@ -1,16 +1,14 @@
+using AutoMapper;
+using Common.Client.Services.Candidate;
+using Common.Client.Services.Vacancy;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using AutoMapper;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Common.Client.Services.Vacancy;
 using Refit;
+using System;
+using System.Linq;
 
 namespace Company.WebUI
 {
@@ -31,6 +29,11 @@ namespace Company.WebUI
             services.AddRefitClient<IVacancyService>().ConfigureHttpClient(c =>
             {
                 c.BaseAddress = new Uri(Configuration["Microservices:VacanciesUrl"]);
+            });
+
+            services.AddRefitClient<ICandidateService>().ConfigureHttpClient(c =>
+            {
+                c.BaseAddress = new Uri(Configuration["Microservices:CandidatesUrl"]);
             });
 
             services.AddControllersWithViews();
