@@ -1,4 +1,4 @@
-﻿namespace Company.WebUI.Models
+﻿namespace Company.WebUI.Models.Vancancies
 {
     public class VacancyListItemViewModel
     {

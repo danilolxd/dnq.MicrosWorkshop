@@ -1,0 +1,23 @@
+﻿@model List<Company.WebUI.Models.Candidates.CandidateListItemViewModel>
+
+@{
+    ViewData["Title"] = "Candidates List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-striped table-bordered table-hover" style="max-width: 500px;">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var candidate in Model)
+    {
+        <tr>
+            <td class="text-center">@candidate.Name</td>
+            <td class="text-right">@candidate.Surname</td>
+            <td class="text-right">@candidate.Email</td>
+        </tr>
+    }
+</table>

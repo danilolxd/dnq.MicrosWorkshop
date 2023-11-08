@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using Common.Client.Services.Vacancy;
-using Company.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Common.Client.Models.Vacancy;
+using Company.WebUI.Models.Vancancies;
 
 namespace Company.WebUI.Controllers
 {
@@ -21,15 +22,17 @@ namespace Company.WebUI.Controllers
         [Route("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var vacancy = await _vacancyService.GetAsync(id);
-            return View(_mapper.Map<VacancyDetailViewModel>(vacancy));
+            VacancyDetailResponse vacancy = await _vacancyService.GetAsync(id);
+            VacancyDetailViewModel vacancyDetailViewModel = _mapper.Map<VacancyDetailViewModel>(vacancy);
+            return View(vacancyDetailViewModel);
         }
 
         [Route("")]
         public async Task<IActionResult> List()
         {
-            var vacancies = await _vacancyService.ListAsync();
-            return View(_mapper.Map<List<VacancyListItemViewModel>>(vacancies));
+            List<VacancyListItemResponse> vacancies = await _vacancyService.ListAsync();
+            List<VacancyListItemViewModel> vacancyListItemViewModels = _mapper.Map<List<VacancyListItemViewModel>>(vacancies);
+            return View(vacancyListItemViewModels);
         }
     }
 }

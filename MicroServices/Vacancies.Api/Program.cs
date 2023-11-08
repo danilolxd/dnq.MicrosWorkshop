@@ -1,7 +1,6 @@
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
 using Vacancies.Infrastructure.Contexts;
 
 namespace Vacancies.Api

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Company.WebUI.Models
+namespace Company.WebUI.Models.Vancancies
 {
     public class VacancyDetailViewModel
     {
