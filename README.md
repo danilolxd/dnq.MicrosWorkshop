@@ -37,3 +37,7 @@ En el detalle de la oferta, aparece un link **NO FUNCIONAL** para ir al listado 
 	 - Email
 
 2. Tenemos que desarrollar la parte del listado y detalle de candidatos en el microfrontend del área de empresa, linkando el enlace hasta ahora "No funcional" y realizando las llamadas al nuevo microservicio usando Refit.
+
+## Notas
+### RabbitMQ
+> [http://localhost:15672/](http://localhost:15672/)
