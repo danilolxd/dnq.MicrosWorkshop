@@ -8,6 +8,7 @@
 
 <table class="table table-striped table-bordered table-hover" style="max-width: 500px;">
     <tr>
+        <th>Id</th>
         <th>Name</th>
         <th>Surname</th>
         <th>Email</th>
@@ -15,7 +16,8 @@
     @foreach (var candidate in Model)
     {
         <tr>
-            <td class="text-center">@candidate.Name</td>
+            <td class="text-center">@candidate.IdCandidate</td>
+            <td class="text-right">@candidate.Name</td>
             <td class="text-right">@candidate.Surname</td>
             <td class="text-right">@candidate.Email</td>
         </tr>
